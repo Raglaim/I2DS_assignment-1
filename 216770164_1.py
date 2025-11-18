@@ -161,3 +161,5 @@ def n_to_10(number,base):
 number=str(input("Enter a number: "))
 base=int(input("Enter the base of the number: "))
 print(n_to_10(number,base))
+
+jhbsduidaiug
