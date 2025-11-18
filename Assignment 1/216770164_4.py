@@ -281,7 +281,7 @@ def return_negative (number,desired_number):
             ans.append('0')
     ans = listtostr(ans)
     ans = add_in_base(ans,1,2)
-    return ans[0]
+    return ans
 
 number=str(input("Enter a number: "))
 desired_number=int(input("Enter the desired number: "))
