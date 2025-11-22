@@ -127,28 +127,7 @@ def n_to_10(number,base):
         "C": 12, "c": 12,
         "D": 13, "d": 13,
         "E": 14, "e": 14,
-        "F": 15, "f": 15,
-        "G": 16, "g": 16,
-        "H": 17, "h": 17,
-        "I": 18, "i": 18,
-        "J": 19, "j": 19,
-        "K": 20, "k": 20,
-        "L": 21, "l": 21,
-        "M": 22, "m": 22,
-        "N": 23, "n": 23,
-        "O": 24, "o": 24,
-        "P": 25, "p": 25,
-        "Q": 26, "q": 26,
-        "R": 27, "r": 27,
-        "S": 28, "s": 28,
-        "T": 29, "t": 29,
-        "U": 30, "u": 30,
-        "V": 31, "v": 31,
-        "W": 32, "w": 32,
-        "X": 33, "x": 33,
-        "Y": 34, "y": 34,
-        "Z": 35, "z": 35
-
+        "F": 15, "f": 15
     }
     ans = 0
     number_list_swaped = swap(strtolist(number))
@@ -158,6 +137,49 @@ def n_to_10(number,base):
         x += 1
     return ans
 
-number=str(input("Enter a number: "))
-base=int(input("Enter the base of the number: "))
+while True:
+    list = ["0","1","2","3","4","5","6","7","8","9","a","A","b","B","c","C","d","D","e","E","f","F"]
+    try:
+        number=str(input("Enter a number: "))
+        for i in number:
+            if i not in list:
+                raise ValueError("Invalid number!")
+        break
+    except:
+        print("Error: invalid number, please enter a number up to base 16!")
+
+while True:
+    letter_to_number = {
+        "0": 0,
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6,
+        "7": 7,
+        "8": 8,
+        "9": 9,
+        "A": 10, "a": 10,
+        "B": 11, "b": 11,
+        "C": 12, "c": 12,
+        "D": 13, "d": 13,
+        "E": 14, "e": 14,
+        "F": 15, "f": 15
+    }
+    list = sorted(strtolist(number))
+    min_base = letter_to_number[list[-1]] + 1
+    try:
+        if min_base == 16:
+            base = 16
+            break
+        else:
+            base = base = strtoint(input(f"Enter the base of the number (between {min_base} and 16): "))
+            if base < min_base or base > 16:
+                raise ValueError("Invalid base!")
+        break
+    except:
+        print("Error: base is out of range!")
+
+
 print(n_to_10(number,base))

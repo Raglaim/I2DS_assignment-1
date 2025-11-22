@@ -283,6 +283,29 @@ def return_negative (number,desired_number):
     ans = add_in_base(ans,1,2)
     return ans
 
-number=str(input("Enter a number: "))
-desired_number=int(input("Enter the desired number: "))
+while True:
+    try:
+        number=str(input("Enter a number in base 2: "))
+        for i in number:
+            if strtoint(i) not in range(2):
+                raise ValueError("Invalid number!")
+        break
+    except:
+        print("Error: invalid number, please enter a number in base 2!")
+
+while True:
+    try:
+        class NumbersEqualsError(Exception):
+            pass
+        desired_number = strtoint(input(f"Enter the desired number (should be greater than {len(number)}): "))
+        if desired_number < len(number):
+            raise ValueError("Invalid number!")
+        elif desired_number == len(number):
+            raise NumbersEqualsError ("Numbers are equal!")
+        break
+    except:
+        print(f"Error: invalid desired number, please enter a desired number greater than {len(number)}!")
+
+
+
 print(return_negative(number,desired_number))

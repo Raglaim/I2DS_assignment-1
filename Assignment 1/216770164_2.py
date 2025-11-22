@@ -156,6 +156,24 @@ def n_10_to_base(number,base):
         n //= base
     return listtostr(swap(ans))
 
-number=str(input("Enter a number: "))
-base=int(input("Enter the base of the number: "))
+while True:
+    try:
+        number=str(input("Enter a number: "))
+        for i in number:
+            if strtoint(i) not in range(10):
+                raise ValueError("Invalid number!")
+        break
+    except:
+        print("Error: invalid number, please enter a number in base 10!")
+
+while True:
+    try:
+        base=strtoint(input("Enter a base: "))
+        if base not in range(2,17):
+            raise ValueError("Invalid base!")
+        break
+    except:
+        print("Error: base out of range, please enter a base between 2 and 16!")
+
+
 print(n_10_to_base(number,base))

@@ -250,7 +250,63 @@ def add_in_base(n1,n2,base):
     ans = n_10_to_base(n1_10 + n2_10,base)
     return ans
 
-n1=str(input("Enter the first number: "))
-n2=str(input("Enter the second number: "))
-base=int(input("Enter the base of the numbers: "))
-print("The sum of ",n1,"and ",n2," in base",base,"is",add_in_base(n1,n2,base))
+while True:
+    list = ["0","1","2","3","4","5","6","7","8","9","a","A","b","B","c","C","d","D","e","E","f","F"]
+    try:
+        n1=str(input("Enter a number: "))
+        for i in n1:
+            if i not in list:
+                raise ValueError("Invalid number!")
+        break
+    except:
+        print("Error: invalid number, please enter a number up to base 16!")
+while True:
+    list = ["0","1","2","3","4","5","6","7","8","9","a","A","b","B","c","C","d","D","e","E","f","F"]
+    try:
+        n2=str(input("Enter a number: "))
+        for i in n2:
+            if i not in list:
+                raise ValueError("Invalid number!")
+        break
+    except:
+        print("Error: invalid number, please enter a number up to base 16!")
+
+while True:
+    letter_to_number = {
+        "0": 0,
+        "1": 1,
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6,
+        "7": 7,
+        "8": 8,
+        "9": 9,
+        "A": 10, "a": 10,
+        "B": 11, "b": 11,
+        "C": 12, "c": 12,
+        "D": 13, "d": 13,
+        "E": 14, "e": 14,
+        "F": 15, "f": 15
+    }
+    list1 = sorted(strtolist(n1))
+    list2 = sorted(strtolist(n2))
+    if list1 > list2:
+        min_base = letter_to_number[list1[-1]] + 1
+    else:
+        min_base = letter_to_number[list2[-1]] + 1
+    try:
+        if min_base == 16:
+            base = 16
+            break
+        else:
+            base = base = strtoint(input(f"Enter the base of the number (between {min_base} and 16): "))
+            if base < min_base or base > 16:
+                raise ValueError("Invalid base!")
+        break
+    except:
+        print("Error: base is out of range!")
+
+
+print("The sum of",n1,"and",n2,"in base",base,"is",add_in_base(n1,n2,base))
