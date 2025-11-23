@@ -250,6 +250,7 @@ def add_in_base(n1,n2,base):
     ans = n_10_to_base(n1_10 + n2_10,base)
     return ans
 
+#Ask for a 2 number.
 while True:
     list = ["0","1","2","3","4","5","6","7","8","9","a","A","b","B","c","C","d","D","e","E","f","F"]
     try:
@@ -270,7 +271,7 @@ while True:
         break
     except:
         print("Error: invalid number, please enter a number up to base 16!")
-
+#Ask for the base of the 2 numbers.
 while True:
     letter_to_number = {
         "0": 0,

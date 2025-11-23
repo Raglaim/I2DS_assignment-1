@@ -156,6 +156,7 @@ def n_10_to_base(number,base):
         n //= base
     return listtostr(swap(ans))
 
+#Ask for a number in base 10.
 while True:
     try:
         number=str(input("Enter a number: "))
@@ -165,7 +166,7 @@ while True:
         break
     except:
         print("Error: invalid number, please enter a number in base 10!")
-
+#Ask for a base.
 while True:
     try:
         base=strtoint(input("Enter a base: "))

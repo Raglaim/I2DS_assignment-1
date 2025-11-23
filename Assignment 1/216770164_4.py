@@ -283,6 +283,7 @@ def return_negative (number,desired_number):
     ans = add_in_base(ans,1,2)
     return ans
 
+#Ask for a number in base 2.
 while True:
     try:
         number=str(input("Enter a number in base 2: "))
@@ -292,7 +293,7 @@ while True:
         break
     except:
         print("Error: invalid number, please enter a number in base 2!")
-
+#Ask for a desired number.
 while True:
     try:
         class NumbersEqualsError(Exception):
