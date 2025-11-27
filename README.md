@@ -1,4 +1,4 @@
-#  <span style="color:white">Into2DS_assignment-1</span>
+#  <span style="color:white">I2DS_assignment-1</span>
 
 
 ## *<span style="color:orange">assignment:</span>*
